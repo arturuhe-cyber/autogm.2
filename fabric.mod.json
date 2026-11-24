@@ -1,0 +1,38 @@
+{
+	"schemaVersion": 1,
+	"id": "autogm",
+	"version": "${version}",
+	"name": "AutoGM",
+	"description": "Автоматически пишет /gm 1 и /fly при падении",
+	"authors": [
+		"Me!"
+	],
+	"contact": {
+		"homepage": "https://fabricmc.net/",
+		"sources": "https://github.com/FabricMC/fabric-example-mod"
+	},
+	"license": "CC0-1.0",
+	"icon": "assets/autogm/icon.png",
+	"environment": "client",
+	"entrypoints": {
+		"main": [
+			"clientside.only.AutoGM"
+		],
+		"client": [
+			"clientside.only.client.AutoGMClient"
+		]
+	},
+	"mixins": [
+		"autogm.mixins.json",
+		{
+			"config": "autogm.client.mixins.json",
+			"environment": "client"
+		}
+	],
+	"depends": {
+		"fabricloader": ">=0.20.1",
+		"minecraft": "~1.21.11",
+		"java": ">=21",
+		"fabric-api": "*"
+	}
+}
